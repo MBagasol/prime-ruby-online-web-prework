@@ -1,6 +1,8 @@
 # Add  code here!
 def prime?(num)
-    Math.sqrt(num).floor.downto(2).each {|i| return false if num % i == 0}
-   true
- 
+    2.upto(Math.sqrt(num).ceil) do |i|
+        break if num%i==0
+        return true if i==Math.sqrt(num).ceil   
+    end
+    return false
 end
